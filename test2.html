@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+    <title>パラメータ取得テスト</title>
+    <script type="text/javascript">
+        function moveToTest1(){
+            var param1 = encodeURIComponent(document.testform.param1.value);
+            var param2 = encodeURIComponent(document.testform.param2.value);
+            var param3 = encodeURIComponent(document.testform.param3.value);
+            window.open("test1.html?param1="+param1+"&param2="+param2+"&param3="+param3,"_self");
+        }
+    </script>
+</head>
+<body>
+    <form id="testform" name="testform">
+        <input type="hidden" id="param1" name="param1" value="?=&">
+        <input type="hidden" id="param2" name="param2" value="?=&">
+        <input type="hidden" id="param3" name="param3" value="?=&">
+        <input type="button" value="テスト１へ" onclick="moveToTest1();">
+    </form>
+</body>
+</html>

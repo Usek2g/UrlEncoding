@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=shift_jis">
+    <title>パラメータ取得テスト</title>
+    <script type="text/javascript">
+        function getURLParameters(){
+            var tmp=location.search;
+            if(tmp!=""){
+                tmp=tmp.substring(1,tmp.length);
+                var tmp2=tmp.split("&");
+                for(i in tmp2){
+                    var key=decodeURIComponent(tmp2[i].split("=")[0]);
+                    var val=decodeURIComponent(tmp2[i].split("=")[1]);
+                   alert("変数: "+key+"　値: "+val);
+                }
+            }
+
+        }
+        function moveToTest2(){
+            window.open("test2.html","_self");
+        }
+
+    </script>
+</head>
+<body onload="getURLParameters();">
+    <input type="button" value="テスト２へ" onclick="moveToTest2();">
+</body>
+</html>
